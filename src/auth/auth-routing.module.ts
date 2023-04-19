@@ -5,12 +5,13 @@ import { CustomerLoginFormComponent } from './customer-login-form/customer-login
 import { ResturantRegFormComponent } from './resturant-reg-form/resturant-reg-form.component';
 import { ResturantLoginFormComponent } from './resturant-login-form/resturant-login-form.component';
 import { AuthGuardService } from './auth-guard.service';
+import { AuthGuardResturantService } from './auth-guard-resturant.service';
 
 const routes: Routes = [
-  {path:'CustomerRegister',component:CustomerRegFormComponent},
+  {path:'CustomerRegister',component:CustomerRegFormComponent,canActivate:[AuthGuardService]},
   {path:'CustomerLogin',component:CustomerLoginFormComponent},
-  {path:'ResturantRegister',component:ResturantRegFormComponent,canActivate:[AuthGuardService]},
-  {path:'ResturantLogin',component:ResturantLoginFormComponent,canActivate:[AuthGuardService]}
+  {path:'ResturantRegister',component:ResturantRegFormComponent,canActivate:[AuthGuardResturantService]},
+  {path:'ResturantLogin',component:ResturantLoginFormComponent}
 ];
 
 @NgModule({
