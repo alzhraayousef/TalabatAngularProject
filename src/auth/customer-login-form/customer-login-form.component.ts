@@ -58,7 +58,7 @@ export class CustomerLoginFormComponent implements OnInit {
             
         //   }
         // });;
-        this.router.navigate(["/auth/ResturantLogin"]);
+        this.router.navigate(["/auth/CustomerRegister"]);
       }
       ,
       error:err=>

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { EnrollService } from '../enroll.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ForbiddenEmailValidator } from '../validations/email.validators';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-resturant-login-form',
@@ -16,7 +18,7 @@ export class ResturantLoginFormComponent implements OnInit {
     email:['',[Validators.required,ForbiddenEmailValidator(/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/)]],
   })
 
-  constructor(private enrollService:EnrollService,private fb:FormBuilder) { }
+  constructor(private enrollService:EnrollService,private fb:FormBuilder, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -35,7 +37,13 @@ export class ResturantLoginFormComponent implements OnInit {
   submitData()
   {
     this.enrollService.ResturantLogin(this.loginForm.value).subscribe({
-      next:data=>console.log(data),
+      next:data=>
+      {
+        console.log(data);
+        const token = (<any>data).token;
+        localStorage.setItem("JWTResturant", token);
+        this.router.navigate(["/auth/ResturantRegister"]);
+      },
       error:err=>console.log(err)
     });
   }

@@ -8,13 +8,27 @@
         <li *ngIf="isUserAuthenticated()" class="nav-item">
           <a class="nav-link" routerLink="/product">Products</a>
         </li>
-        <li *ngIf="isUserAuthenticated()" class="nav-item">
+
+                  <!--Customer-->
+
+        <li *ngIf="isUserAuthenticated() && !isResturantAuthenticated()" class="nav-item">
           <a class="nav-link" (click)="logOut()">Logout</a>
         </li>
 
-        <li *ngIf="!isUserAuthenticated()" class="nav-item">
+        <li *ngIf="!isUserAuthenticated() && !isResturantAuthenticated()" class="nav-item">
             <a class="nav-link" RouterLink="/auth/CustomerLogin">Login</a>
           </li>
+
+          <!--Resturant-->
+
+          <li *ngIf="isResturantAuthenticated() && !isUserAuthenticated()" class="nav-item">
+            <a class="nav-link" (click)="ResturantlogOut()">Logout</a>
+          </li>
+
+          <li *ngIf="!isResturantAuthenticated() && !isUserAuthenticated()" class="nav-item">
+            <a class="nav-link" RouterLink="/auth/ResturantLogin">Become a partner</a>
+          </li>
+
 
       </ul>
     </div>
