@@ -1,0 +1,23 @@
+[
+  {
+    "ID":1,
+    "Name":"KFC",
+    "Image":"../../assets/Imges/ApacheChicken.webp",
+    "MinOrderAmmount":100,
+    "DelivaryFee":15.55,
+    "DelivaryTime":"1 Hour",
+    "WorkingHours":"12 AM",
+    "IsDeleted":false
+ },
+ {
+  "ID":1,
+  "Name":"KFC",
+  "Image":"../../assets/Imges/ApacheChicken.webp",
+  "MinOrderAmmount":100,
+  "DelivaryFee":15.55,
+  "DelivaryTime":"1 Hour",
+  "WorkingHours":"12 AM",
+  "IsDeleted":false
+ }
+
+]

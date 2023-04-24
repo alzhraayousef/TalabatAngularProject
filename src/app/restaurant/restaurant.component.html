@@ -1,0 +1,45 @@
+<!-- <div class="card ms-5 mr-2" id="productDiv" *ngFor="let res of RestaurantList">
+  <img class="card-img-bottom" src={{res.Image}} alt="Card image" style="width:100%;margin-bottom:0" width="220px" height="220px">
+  <div class="card-body">
+     <h4 class="card-title">{{res.Name}}</h4>
+     <p class="card-text">{{res.MinOrderAmmount}}</p>
+    <button class="card-link btn btn-info" (click)="ShowProduct()">Buy</button>
+  </div>
+</div> -->
+<div class="container">
+<div class="row cards-container" >
+<div class="col-sm-6 col-md-6 col-lg-6" *ngFor="let res of RestaurantList">
+  <div class="food-card food-card--vertical" >
+      <div class="food-card_img">
+          <img src="http://localhost:59638/images/{{res.image}}" alt="">
+          <a href="#!"><i class="fa fa-heart"></i></a>
+      </div>
+      <div class="food-card_content">
+          <div class="food-card_title-section">
+              <a href="#!" class="food-card_title"></a>
+              <a href="#!" class="food-card_author"></a>
+          </div>
+          <div class="food-card_bottom-section">
+              <div class="space-between">
+                  <div>
+                      <span class="fa fa-fire"></span>{{res.minOrderAmmount}}
+                  </div>
+                  <div class="pull-right">
+                      <span class="badge badge-success">Veg</span>
+                  </div>
+              </div>
+              <hr>
+              <div class="space-between">
+                  <div class="food-card_price">
+                      <span>{{res.minOrderAmmount}}</span>
+                  </div>
+                  <div class="food-card_order-count">
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+</div>
