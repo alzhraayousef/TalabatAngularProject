@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EnrollService } from '../enroll.service';
+import { EnrollService } from '../Services/enroll.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ForbiddenEmailValidator } from '../validations/email.validators';
 import { JwtHelperService } from '@auth0/angular-jwt';

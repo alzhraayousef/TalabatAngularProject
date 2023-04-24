@@ -4,8 +4,8 @@ import { CustomerRegFormComponent } from './customer-reg-form/customer-reg-form.
 import { CustomerLoginFormComponent } from './customer-login-form/customer-login-form.component';
 import { ResturantRegFormComponent } from './resturant-reg-form/resturant-reg-form.component';
 import { ResturantLoginFormComponent } from './resturant-login-form/resturant-login-form.component';
-import { AuthGuardService } from './auth-guard.service';
-import { AuthGuardResturantService } from './auth-guard-resturant.service';
+import { AuthGuardService } from './Services/auth-guard.service';
+import { AuthGuardResturantService } from './Services/auth-guard-resturant.service';
 
 const routes: Routes = [
   {path:'CustomerRegister',component:CustomerRegFormComponent,canActivate:[AuthGuardService]},

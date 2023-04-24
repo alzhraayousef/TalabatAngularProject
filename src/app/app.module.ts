@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import { HeaderComponent } from './header/header.component';
 import { JwtModule } from '@auth0/angular-jwt';
 //import { ToastrModule } from 'ngx-toastr';
 
@@ -17,8 +16,7 @@ export function tokenGetter() {
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

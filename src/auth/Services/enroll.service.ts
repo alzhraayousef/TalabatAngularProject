@@ -9,11 +9,11 @@ import { tokenGetter } from 'src/app/app.module';
 })
 export class EnrollService {
 
-  _CustomerRegisterUrl:string="http://localhost:59638/api/Customer/Register";
-  _CustomerLoginUrl:string="http://localhost:59638/api/Customer/Login";
+  _CustomerRegisterUrl:string="http://localhost:59638/api/CustomerAccount/Register";
+  _CustomerLoginUrl:string="http://localhost:59638/api/CustomerAccount/Login";
 
-  _ResturantRegisterUrl:string="http://localhost:59638/api/Resturant/Register";
-  _ResturantLoginUrl:string="http://localhost:59638/api/Resturant/Login";
+  _ResturantRegisterUrl:string="http://localhost:59638/api/ResturantAccount/Register";
+  _ResturantLoginUrl:string="http://localhost:59638/api/ResturantAccount/Login";
   headers?: HttpHeaders;
 
   constructor(private http:HttpClient) { }
@@ -60,7 +60,7 @@ export class EnrollService {
         Authorization: `Bearer ${tokenGetter() as string}`,
       });
       //,{headers:headers}
-        return this.http.get("http://localhost:59638/api/Resturant/Index").pipe(catchError((err: any) => {
+        return this.http.get("http://localhost:59638/api/ResturantAccount/Index").pipe(catchError((err: any) => {
           return throwError(() => err.message || "server error");
           }));
   }

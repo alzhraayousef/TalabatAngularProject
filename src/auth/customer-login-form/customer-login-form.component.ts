@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ForbiddenEmailValidator } from '../validations/email.validators';
-import { EnrollService } from '../enroll.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
+import { EnrollService } from '../Services/enroll.service';
 //import { ToastrService } from 'ngx-toastr';
 
 

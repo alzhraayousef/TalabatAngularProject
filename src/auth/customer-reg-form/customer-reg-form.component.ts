@@ -3,7 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { ForbiddenNameValidator } from '../validations/userName.validators';
 import { ForbiddenEmailValidator } from '../validations/email.validators';
 import { ConfirmPasswordValidator } from '../validations/confirmPassword.validators';
-import { EnrollService } from '../enroll.service';
+import { EnrollService } from '../Services/enroll.service';
 
 @Component({
   selector: 'app-customer-reg-form',
