@@ -10,6 +10,16 @@ import { LandingComponent } from '../landing/landing/landing.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { JwtModule } from '@auth0/angular-jwt';
+//import { ToastrModule } from 'ngx-toastr';
+
+
+
+export function tokenGetter() {
+  return localStorage.getItem("jwt");
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +33,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+       allowedDomains: ["localhost:59638"],
+        disallowedRoutes: []
+      }
+  }),
+  //ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,7 +7,7 @@ const routes: Routes = [
   {path:'',component:LandingComponent},
    {path:'home-page',component:LandingComponent},
    {path:'AllRestaurants',component:RestaurantComponent},
-
+  {path:'auth',loadChildren:()=>import("../auth/auth.module").then(m=>m.AuthModule)},
 ];
 
 @NgModule({
