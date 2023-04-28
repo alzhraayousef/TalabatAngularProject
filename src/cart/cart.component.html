@@ -1,0 +1,71 @@
+
+
+<section class="h-100 h-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div  class="card-body" style="width: 40%;border: 1px solid black;padding: 10px;">
+          <h2 style="background-color: #ff5a00;padding: 20px;color:white">Your Cart</h2>
+          <br>
+          <div class="empty">
+            <div class="info">
+              <h4>There are no items in your cart</h4>
+            </div>
+          </div>  
+          <!-- <ng-container *ngIf="items.length>0" *ngFor="let item of productList"> -->
+              <h4 style="color: black;">{{ShowProduct.resturantName}}</h4>
+              <div *ngIf="isVsiable==true" style=" display: flex;justify-content: space-between;background-color: #fafafa;border-top: 1px solid black;border-bottom:1px solid black;">
+                <div class="d-flex" style="max-width: 30px;">
+                  <button type="button" class="btn btn-white "
+                    style="border: 1px solid black; max-height: 37px;margin-top: 10px;"
+                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                    <a><i class="bi bi-dash" (click)="calcQuantityMinus(ShowProduct.quantity,ShowProduct.productPrice)" style="color: #ff5a00;"></i></a>
+                  </button>
+                  <div class="form-outline">
+                    <input  id="form1" min="0" name="quantity" [value]="ShowProduct.quantity"  type="number" class="form-control"
+                     style="border: 1px solid black;max-height: 50px;margin-top: 10px;" />
+                    <label style="color: #fafafa;">kkkkkkk</label>
+                  </div>
+                  <button class="btn btn-white" style="border: 1px solid black;max-height: 37px;margin-top: 10px;"
+                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                    <i class="bi bi-plus" (click)="calcQuantityPlus(ShowProduct.quantity,ShowProduct.productPrice)"  style="color: #ff5a00;"></i>
+                  </button>
+
+
+                </div>
+
+                  <span style="margin-top: 15px;margin-left: 15px;" class="mb-2">{{ShowProduct.productName}}</span>
+                  <span style="margin-top: 15px;margin-left: 10px;"  class="mb-2">EGP {{totalPrice+ShowProduct.productPrice}}</span>
+                  <a style="height:15px ;margin-top: 16px;cursor: pointer;" (click)="removeProduct()" ><i class="bi bi-dash-circle" style="color: #ff5a00;"></i></a>
+              
+
+              </div>
+              <br>
+              <div *ngIf="isVsiable==true">
+                <div class="d-flex justify-content-between" style="color: black;">
+                  <p class="mb-2">Subtotal</p>
+                  <p class="mb-2">EGP {{totalPrice+ShowProduct.productPrice}}</p>
+                </div>
+
+                <div class="d-flex justify-content-between" style="color: black;">
+                  <p class="mb-2">Delivery fee</p>
+                  <p class="mb-2">EGP {{ShowProduct.delivaryFee}}</p>
+                </div>
+                <div class="d-flex justify-content-between mb-4" style="color: black;">
+                  <p class="mb-2"><b>Total Amount</b></p>
+                  <p class="mb-2"><b>EGP {{totalPrice+ShowProduct.productPrice - ShowProduct.delivaryFee}}</b></p>
+                </div>
+            </div>
+              <button type="button" class="btn btn-secondary text-uppercase btn-checkout"
+                style="text-align:center;width:100% ;">PRODUCT TO CHECKOUT</button>
+        <!-- </ng-container> -->
+        <!--  (click)="AddToOrder(productList)" -->
+            </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+</section>
