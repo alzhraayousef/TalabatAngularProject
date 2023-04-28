@@ -1,0 +1,382 @@
+<section style="background-color: #eee;">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col">
+                <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+                    <ol class="breadcrumb mb-0">
+                        <a href="https://www.talabat.com/uae/" class="breadcrumb-item">Home</a>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
+                            class="svg-inline--fa fa-chevron-right fa-w-10 primary-text mx-4 mx-m-2 f-10" role="img"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                            <path fill="currentColor"
+                                d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
+                            </path>
+                        </svg>
+                        <a href="/uae" class="breadcrumb-item">My Account</a>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <!-- <div class="card mb-4">
+            <div class="card-body text-center">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                class="rounded-circle img-fluid" style="width: 150px;">
+              <h5 class="my-3">John Smith</h5>
+              <p class="text-muted mb-1">Full Stack Developer</p>
+              <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
+              <div class="d-flex justify-content-center mb-2">
+                <button type="button" class="btn btn-primary">Follow</button>
+                <button type="button" class="btn btn-outline-primary ms-1">Message</button>
+              </div>
+            </div>
+          </div> -->
+                <div class="card mb-4 mb-lg-0">
+                    <div class="card-body p-0">
+                        <ul class="list-group list-group-flush rounded-3">
+                            <li class="list-group-item d-flex justify-content-left align-items-center p-3">
+                                <i class="fas fa-globe fa-lg text-warning"></i>
+                                <button class="btn breadcrumb-item" (click)="onAccclick()">Account Info</button>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-left align-items-center p-3">
+
+                                <button class="btn breadcrumb-item" (click)="onSavedclick()">Saved Addresses</button>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-left align-items-center p-3">
+                                <button class="btn breadcrumb-item" (click)="onOrderclick()">My Orders</button>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-left align-items-center p-3">
+                                <button class="btn breadcrumb-item" (click)="OnVisavisibleclick()">Saved Cards</button>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-left align-items-center p-3">
+                                <button class="btn breadcrumb-item" (click)="OnTalabatvisibleclick()">talabat
+                                    Pay</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--Account info-->
+
+            <ng-container *ngIf="visible">
+                <div class="col-lg-8">
+                    <div class="card mb-4">
+                        <div class="card-body CLOSE">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Email</p>
+
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="email">
+                                    <li class="breadcrumb-item-my"
+                                        style="display: inline; margin-left: 20px; font-size: 12px;"><a href=""
+                                            style="color:rgb(0, 165, 60); text-decoration: none;">Change Email</a></li>
+                                    <li class="breadcrumb-item"
+                                        style="display: inline; margin-left: 20px; font-size: 12px;"><a href=""
+                                            style="color:rgb(0, 165, 60); text-decoration: none;">Change Password</a>
+                                    </li>
+
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">First Name</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text">
+
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Last Name</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Gender</p>
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="sc-39a8ac1a-0 gsQTSZ">
+                                        <div class="radio-item"><input data-test="radio-button" type="radio"
+                                                id="radioMale" name="gender" value="male"
+                                                data-gtm-form-interact-field-id="0"><label data-test="label"
+                                                class="m-0 f-14 text-center py-2 px-4 b-a" for="radioMale">Male</label>
+                                        </div>
+                                        <div class="radio-item"><input data-test="radio-button" type="radio"
+                                                id="radioFemale" name="gender" value="female" checked=""
+                                                data-gtm-form-interact-field-id="1"><label data-test="label"
+                                                class="m-0 f-14 text-center py-2 px-4 b-a"
+                                                for="radioFemale">Female</label></div>
+                                    </div>
+                                    <p class="error f-13 mt-1 mb-0"></p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Date of birth</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="date" style="text-align: center;">
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <!-- Default checkbox -->
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                            style="background-color: #ff5a00;" />
+                                        <label class="form-check-label" style="font-size: 12px;">Subscribe to our
+                                            Newsletter</label>
+
+                                    </div>
+                                    <div class="form-check wrapper">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                            style="background-color: #ff5a00;" />
+                                        <label class="form-check-label" style="font-size: 12px;">Subscribe to
+                                            SMS</label>
+                                        <button class="btn btn-outline-light" data-toggle:modal
+                                            style="margin-left: 200px;">UPDATE</button>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </ng-container>
+
+
+
+            <!--Saved Addresses-->
+
+            <ng-container *ngIf="Savedvisible">
+                <div class="col-lg-8">
+                    <div class="card mb-4">
+                        <div class="card-body">
+
+
+
+
+
+                            <div class="row">
+                                <div>
+                                    <img src="../assets/location.png" class="d-flex  justify-content-center"
+                                        alt="no addresses" style="width: 60px; margin: 0;">
+                                    <h6 class="mb-0" style="text-align: center;">There are no saved addresses to display
+                                    </h6>
+                                </div>
+
+                            </div>
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <!-- Default checkbox -->
+
+
+                                    <div class="form-check wrapper">
+
+                                        <button id="saved" class="btn btn-outline-light" 
+                                            style="margin-left: 200px;">Add Address</button>
+                                    </div>
+
+                                    <div id="myModal" class="modal">
+
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close">&times;</span>
+                                            <p>Some text in the Modal..</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </ng-container>
+
+
+
+            <!--Orders-->
+
+            <ng-container *ngIf="Ordervisible">
+                <div class="col-lg-8">
+                    <div class="card mb-4">
+                        <div class="card-body">
+
+
+                            <div class="row">
+                                <div>
+                                    <img src="../assets/checkout.png" alt="no addresses"
+                                        style="width: 80px; margin: 0;">
+                                    <h6 class="mb-0" style="text-align: center;">There are no orders to display</h6>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div style="height:50px">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </ng-container>
+
+
+
+
+            <!--Visa Cards-->
+
+            <ng-container *ngIf="Visavisible">
+                <div class="col-lg-8">
+                    <div class="card mb-4">
+                        <div class="card-body">
+
+
+                            <div class="row">
+                                <div>
+                                    <img src="../assets/visa.png" alt="no addresses" style="width: 80px; margin: 0;">
+                                    <h6 class="mb-0" style="text-align: center;">There are no saved visa credit card to
+                                        Display</h6>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div style="height:50px">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </ng-container>
+
+
+            <!--Talabat Pay-->
+            <ng-container *ngIf="Talabatvisible">
+                <div class="col-lg-8">
+                    <div class="card mb-4">
+                        <div class="card-body">
+
+
+                            <div class="row">
+                                <div>
+                                    <div class="sc-6748562a-0 dQdrgy">
+                                        <div class="row px-2">
+                                            <h5>Available Balance<span class="green"> <span
+                                                        class="currency-symbol ">AED</span><span
+                                                        class="currency">0.00</span></span></h5>
+                                        </div>
+                                        <hr style="color:white">
+                                        <button class="btn"
+                                            style="background-color: orange; margin-left: 140px; text-align: center; width: 300px; border-radius: 5px; color:white"><label
+                                                data-test="label" class="m-0 f-14 text-center py-2 px-4 b-a"
+                                                for="tabRedeemCredit">Redeem Credit Code</label></button>
+                                        <hr style="color:white">
+
+                                        <form class="mt-6" data-test="frmRedeemCredit">
+                                            <div class="form-group row mb-1">
+                                                <label class="col-sm-9 col-md-0 pt-2 mb-0" for="voucherCode">Please
+                                                    enter your voucher code here:</label>
+
+                                                <div class="col-sm-6 col-md-10">
+                                                    <input type="text" id="voucherCode" name="voucherCode"
+                                                        placeholder="Voucher Code" class="form-control f-14">
+                                                    <p class="error f-14 mt-1"></p>
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                        <div>
+                                            <button class="btn btn-outline-light" data-toggle:modal
+                                                style="float: right;">Redeem Voucher</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div style="height:50px">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </ng-container>
+        </div>
+
+        <script>
+            var modal = document.getElementById("myModal");
+
+            // Get the button that opens the modal
+            var btn = document.getElementsByClassName("saved");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks on the button, open the modal
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+    </div>
+
+    <!-- <ng-container *ngIf="visible">
+        <div class="bg-white shadow-sm p-3">
+            <h4>Hello World</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse tempore aut molestiae, unde non soluta! A, nesciunt. Earum facere totam error, nam placeat, quia, veritatis aspernatur voluptate vitae fugit odit.
+            </p>
+        </div>
+    </ng-container> -->
+
+</section>
