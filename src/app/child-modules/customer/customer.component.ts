@@ -17,6 +17,12 @@ customers:any=[];
 errorMessage:any;
 postId:number = 1;
 
+
+addressForm=this.fb.group({
+  password:[''],
+  email:[''],
+})
+
 // addressForm = new FormGroup({
 //   user:new FormControl(''), 
 //   password:new FormControl(''),
@@ -30,10 +36,10 @@ postId:number = 1;
   ngOnInit(): void {
 
 
-    this.addressForm = this.fb.group({
-      user:'',
-      password:'',
-    })
+    // this.addressForm = this.fb.group({
+    //   user:'',
+    //   password:'',
+    // })
     this.http.post<any>('http://localhost:59638/api/Customer',{address:'Feryal, Assiut'}).subscribe(data=>{
       this.postId = data.id;
     })
